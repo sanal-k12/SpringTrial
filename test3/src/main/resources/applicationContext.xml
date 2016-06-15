@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd" >
+	
+	
+	
+	<bean id ="bo" class="com.jlc.spring.B">
+		<constructor-arg value="88"></constructor-arg>
+		<constructor-arg value="Hai Boyz"></constructor-arg>
+	</bean>
+	
+	<!--   gives conflict error for "byType" autowire
+	<bean id ="bo2" class="com.jlc.spring.B">
+		<constructor-arg value="88"></constructor-arg>
+		<constructor-arg value="Hai Boyz"></constructor-arg>
+	</bean> -->
+	
+	
+	<bean id ="aobj" class="com.jlc.spring.A">
+		<property name="a" value="99"></property>
+		<property name="msg" value="Hello Gals"></property>
+	</bean>
+	
+	
+	<bean id ="hello" class="com.jlc.spring.Hello" autowire="byType"/>
+
+</beans>
